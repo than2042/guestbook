@@ -8,17 +8,29 @@
     <title>Guestbook</title>
   </head>
   <body>
-    <div id="formContainer">
-      <form>
-        <label>User Name</label>
-        <input name="userName" placeholder="User Name" />
-        <label>Message</label>
-        <textarea name="message" placeholder="message"></textarea>
-        <button>Submit</button>
-      </form>
+    <div class="main">
+      <div id="formContainer">
+        <h1 class="head">
+          Feel Free to message and <span>Sign Guestbook</span>!!!
+        </h1>
+        <form id="form">
+          <label>User Name:</label>
+          <input name="userName" placeholder="User Name" />
+          <label>Message:</label>
+          <textarea
+            name="message"
+            placeholder="Message"
+            cols="30"
+            rows="5"
+          ></textarea>
+          <div id="btnContainer">
+            <button id="submit">Submit</button>
+            <button id="delete">Delete</button>
+            <button id="update">Update</button>
+          </div>
+        </form>
+      </div>
       <div id="displayContainer"></div>
-      <button>Delete</button>
-      <button>Update</button>
     </div>
   </body>
 </html>
