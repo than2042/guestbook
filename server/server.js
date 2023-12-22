@@ -12,6 +12,7 @@ app.use(cors());
 // app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
+  req.body;
   res.json("getting server");
 });
 
@@ -51,28 +52,6 @@ app.delete("/delete-message/:id", (req, res) => {
     res.status(404).json({ success: false, message: "Record not found" });
   }
 });
-
-// app.put("/like-message/:id", (req, res) => {
-//   const messageId = parseInt(req.params.id);
-
-//   const existingMessage = db
-//     .prepare("SELECT * FROM messages WHERE id = ?")
-//     .get(messageId);
-
-//   if (!existingMessage) {
-//     return res.status(404).json({ error: "Message not found" });
-//   }
-
-//   db.prepare(
-//     "UPDATE messages SET likes = COALESCE(likes, 0) + 1 WHERE id = ?"
-//   ).run(messageId);
-
-//   const updatedMessage = db
-//     .prepare("SELECT * FROM messages WHERE id = ?")
-//     .get(messageId);
-
-//   res.json({ success: true, likes: updatedMessage.likes });
-// });
 
 app.listen(port, () => {
   console.log(`App is running ${port}`);
