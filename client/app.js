@@ -8,13 +8,16 @@ formMessage.addEventListener("submit", async (e) => {
   const formData = new FormData(formMessage);
   const formValue = Object.fromEntries(formData);
 
-  const response = await fetch("http://localhost:8080/message", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formValue),
-  });
+  const response = await fetch(
+    "https://guestbook-server-njd0.onrender.com/message",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValue),
+    }
+  );
 
   const json = await response.json();
   formMessage.reset(); // reset the form
@@ -74,7 +77,9 @@ const createMessageContainer = (item) => {
 };
 
 async function displayMessage() {
-  const response = await fetch("http://localhost:8080/message");
+  const response = await fetch(
+    "https://guestbook-server-njd0.onrender.com/message"
+  );
   const messages = await response.json();
 
   const showMessage = document.getElementById("displayContainer");
@@ -89,7 +94,7 @@ async function displayMessage() {
 async function deleteMessageId(messageId) {
   try {
     const response = await fetch(
-      `http://localhost:8080/delete-message/${messageId}`,
+      `https://guestbook-server-njd0.onrender.com/${messageId}`,
       {
         method: "DELETE",
         headers: {
