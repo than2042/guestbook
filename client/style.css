@@ -58,7 +58,7 @@ button {
   border-radius: 0.5rem;
   font-size: 1rem;
 }
-#submit {
+.submit {
   background: #e3aa26;
   border: 1px solid #e3aa26;
   color: #13055a;
@@ -112,15 +112,17 @@ button {
   }
   input {
     height: 2.5rem;
+    padding: 1rem;
   }
   textarea {
     height: 7rem;
+    padding: 1rem;
   }
 
   #btnContainer {
     gap: 2rem;
   }
-  #submit:hover {
+  .submit:hover {
     background: #8a6204;
     border: 1px solid #8a6204;
     color: #e7e4f3;
@@ -139,5 +141,21 @@ button {
   }
   #displayContainer {
     width: 80%;
+  }
+
+  .messageContainer {
+    display: flex;
+    gap: 1rem;
+  }
+  .deleteIcon {
+    color: red;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+  .likeIcon {
+    color: #10a775;
+    cursor: pointer;
+    margin-left: 5px;
   }
 }

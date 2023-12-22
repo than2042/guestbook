@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      data-search-pseudo-elements
+      src="https://kit.fontawesome.com/f737751420.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="app.js" defer type="module"></script>
     <title>Guestbook</title>
   </head>
@@ -13,24 +18,27 @@
         <h1 class="head">
           Feel Free to message and <span>Sign Guestbook</span>!!!
         </h1>
-        <form id="form">
+        <form id="submit">
           <label>User Name:</label>
-          <input name="userName" placeholder="User Name" />
+          <input name="userName" placeholder="User Name" required />
           <label>Message:</label>
           <textarea
             name="message"
             placeholder="Message"
             cols="30"
             rows="5"
+            required
           ></textarea>
-          <div id="btnContainer">
-            <button id="submit">Submit</button>
-            <button id="delete">Delete</button>
-            <button id="update">Update</button>
-          </div>
+
+          <button type="submit" class="submit">Submit</button>
         </form>
       </div>
-      <div id="displayContainer"></div>
+      <div id="displayContainer">
+        <!-- <div id="btnContainer"></div>
+        <button id="delete">Delete</button>
+        <button id="update">Update</button>
+      </div> -->
+      </div>
     </div>
   </body>
 </html>
